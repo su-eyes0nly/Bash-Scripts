@@ -1,17 +1,5 @@
 #!/bin/bash
 
-# Ensure script is run as root
-if [ "$(id -u)" -ne 0 ]; then
-  echo "This script must be run as root!"
-  exit 1
-fi
-
-# Install whiptail to gain interactive menu similar to the official archinstall script
-if ! command -v whiptail &>/dev/null; then
-  echo "Installing whiptail..."
-  pacman -Sy --noconfirm whiptail
-fi
-
 # Display ASCII Logo
 echo"====================================================================="
 echo"███████╗██████╗░███████╗███╗░░░███╗░█████╗░███╗░░██╗██╗░░░██╗██╗░░██╗"
@@ -26,6 +14,19 @@ echo "This script will guide you through partitioning, system setup,"
 echo "and installing forensic & malware analysis tools."
 echo
 read -rp "Press Enter to continue..."
+
+
+# Ensure script is run as root
+if [ "$(id -u)" -ne 0 ]; then
+  echo "This script must be run as root!"
+  exit 1
+fi
+
+# Install whiptail to gain interactive menu similar to the official archinstall script
+if ! command -v whiptail &>/dev/null; then
+  echo "Installing whiptail..."
+  pacman -Sy --noconfirm whiptail
+fi
 
 # ---------------------------------------------
 # 🚀 DISK SETUP (Partitioning & Formatting)
