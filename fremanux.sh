@@ -31,7 +31,7 @@ fi
 # ---------------------------------------------
 # 🚀 DISK SETUP (Partitioning & Formatting)
 # ---------------------------------------------
-DISK=$(whiptail --inputbox "Enter the disk to install Arch (e.g., /dev/sda):" 10 60 "/dev/sda" 3>&1 1>&2 2>&3)
+DISK=$(whiptail --inputbox "Enter the disk to install Arch (e.g., /dev/sda or /dev/vda):" 10 60 "/dev/sda" 3>&1 1>&2 2>&3)
 if [ $? -ne 0 ]; then
   echo "Installation canceled!"
   exit 1
