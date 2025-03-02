@@ -70,7 +70,7 @@ pacstrap /mnt base linux linux-lts linux-firmware util-linux sudo btrfs-progs in
 genfstab -U /mnt >> /mnt/etc/fstab
 
 # Change root into the new system
-arch-chroot /mnt /bin/bash <<EOF
+arch-chroot /mnt /bin/bash -c <<EOF
 
 # Set the timezone
 ln -sf /usr/share/zoneinfo/${TIMEZONE} /etc/localtime
